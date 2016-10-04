@@ -1,9 +1,9 @@
 var chai = require('chai');
 var assert = chai.assert;
 
-var sumAll = require('../src/diffArray.js');
+var diffArray = require('../src/diffArray.js');
 
-it('sumAll', function() {
+it('diffArray', function() {
     assert(typeof diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) === "object",
         'message: <code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.');
     assert.sameMembers(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
