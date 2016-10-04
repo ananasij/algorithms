@@ -28,5 +28,22 @@ it('diffArray', function() {
         'message: <code>[1, "calf", 3, "piglet"], [7, "filly"]</code> should return <code>[1, "calf", 3, "piglet", 7, "filly"]</code>.');
 });
 
+it('diffArray shoudn\'t modify arguments', function() {
+    var arr1 = [1, 2, 3];
+    var arr2 = [5, 6, 7];
 
+    diffArray(arr1, arr2);
+
+    assert.sameMembers(
+        arr1,
+        [1, 2, 3],
+        'function shouldn\'t modify first argument'
+    );
+
+    assert.sameMembers(
+        arr2,
+        [5, 6, 7],
+        'function shouldn\'t modify second argument'
+    );
+});
 
