@@ -1,12 +1,18 @@
 
 function whatIsInAName(collection, source) {
-    // What's in a name?
+    var arrayToFilter = collection;
     var arr = [];
-    // Only change code below this line
+    for (var maskKey in source) {
+        arrayToFilter.forEach(function(value) {
+            if (value.hasOwnProperty(maskKey) && value[maskKey] === source[maskKey]) {
+                arr.push(value);
+            }
+        });
+        arrayToFilter = arr;
+        arr = [];
+    }
 
-
-    // Only change code above this line
-    return arr;
+    return arrayToFilter;
 }
 
 module.exports = whatIsInAName;
