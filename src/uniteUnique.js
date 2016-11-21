@@ -1,5 +1,5 @@
 
-function uniteUnique(arr) {
+function uniteUnique() {
     var input = Array.from(arguments);
     var result = [];
 
