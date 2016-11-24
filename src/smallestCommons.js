@@ -7,13 +7,13 @@ function smallestCommons(arr) {
 
     if (arr[0] === arr[1]) {
         return arr[0];
-    } else if (arr[0] < arr[1]) {
-        first = arr[0];
-        last = arr[1];
-    } else {
-        first = arr[1];
-        last = arr[0];
     }
+
+    var sortedArr = arr.sort(function(a, b) {
+        return a - b;
+    });
+    first = sortedArr[0];
+    last = sortedArr[1];
 
     for (var i = last; i >= first; i--) {
         numbers.push(i);
